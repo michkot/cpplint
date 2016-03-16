@@ -289,6 +289,7 @@ _ERROR_CATEGORIES = [
     'whitespace/ending_newline',
     'whitespace/forcolon',
     'whitespace/indent',
+    'whitespace/indentaccess'
     'whitespace/line_length',
     'whitespace/newline',
     'whitespace/operators',
@@ -2661,7 +2662,7 @@ class NestingState(object):
           slots = ''
           if access_match.group(3):
             slots = access_match.group(3)
-          error(filename, linenum, 'whitespace/indent', 3,
+          error(filename, linenum, 'whitespace/indentaccess', 3,
                 '%s%s: should be indented +1 space inside %s' % (
                     access_match.group(2), slots, parent))
 
