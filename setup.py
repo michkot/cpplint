@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='cpplint',
-      version='1.1.0',
+      version='1.3.0',
       py_modules=['cpplint'],
       # generate platform specific start script
       entry_points={
@@ -26,7 +26,7 @@ setup(name='cpplint',
                    "Programming Language :: Python :: 3.4",
                    "Programming Language :: Python :: 3.5",
                    "Programming Language :: C++",
-                   "Development Status :: 5",
+                   "Development Status :: 5 - Production/Stable",
                    "Environment :: Console",
                    "Topic :: Software Development :: Quality Assurance",
                    "License :: Freely Distributable"],

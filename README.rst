@@ -27,8 +27,8 @@ Changes
 The modifications in this branch are minor fixes and cosmetic changes:
 
 * more default extensions
-* python 3k compatibility
-* minor fixes around default file extensions
+* python 3 compatibility
+* customizable file extensions with the --extensions and --headers arguments
 * continuous integration on travis
 * support for recursive file discovery via the --recursive argument
 * support for excluding files via --exclude
@@ -54,7 +54,25 @@ To release a new version:
     python setup.py sdist register -r pypi
     python setup.py sdist upload -r pypi
 
+To incorporate google's changes:
+
+.. code-block:: bash
+
+    git fetch google gh-pages
+    git checkout -b updates FETCH_HEAD
+    git rebase master
+    git push -u origin updates
+    # check travis
+    git push origin --delete updates
+
+    git rebase updates master
+    git branch -D updates
+    git push
+
 Thanks to `tkruse <https://github.com/tkruse>`_ for putting cpplint on PyPI and maintaining the PyPI version for many years!
 
 .. image:: https://travis-ci.org/theandrewdavis/cpplint.svg
     :target: https://travis-ci.org/theandrewdavis/cpplint
+
+.. image:: https://img.shields.io/pypi/v/cpplint.svg
+    :target: https://pypi.python.org/pypi/cpplint
